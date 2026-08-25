@@ -1,4 +1,3 @@
-.include "lib.s"
 ; INES Header
 ; Signatures the program that it's a valid NES software 
 
@@ -61,7 +60,7 @@ ppu_ct11:   .res 1
     ; OR operate on A via VBLANK register  
     ; Store and update ppu_ct10 so it's last updated value is used (pointer for me)
     ; Store into $2000, the hardware register. The VBLANK's been turned on so firing it into this register now responds with the hardware, in this case, to blank the screen. 
-
+    
     lda ppu_ct11 
     ora #OBJ_ON | BG_ON 
     sta ppu_ct11 
